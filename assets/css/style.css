@@ -219,9 +219,17 @@ h1 { font-size: clamp(52px, 7vw, 82px); font-weight: 730; letter-spacing: -.055e
 .tags span { font-family: var(--mono); font-size: 10.5px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); padding: 4px 8px; border-radius: 6px; }
 
 .research-list { display: grid; gap: 18px; }
-.research-card { display: grid; grid-template-columns: 130px 1fr; gap: 28px; }
+.research-card { display: grid; grid-template-columns: 240px 1fr; gap: 28px; }
 .research-meta { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 .research-meta .card-period { line-height: 1.5; }
+.research-figure {
+  display: block; width: 100%; margin-top: 6px; background: #fff;
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  box-shadow: var(--shadow); cursor: zoom-in;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.research-figure:hover { border-color: var(--accent-line); transform: translateY(-2px); }
+.research-figure img { display: block; width: 100%; height: auto; }
 .research-body h3 { font-size: 19px; }
 .research-body .card-points { margin-top: 16px; }
 .research-result { margin-top: 16px; padding: 12px 14px; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 13px; color: var(--muted); }
@@ -271,7 +279,8 @@ h1 { font-size: clamp(52px, 7vw, 82px); font-weight: 730; letter-spacing: -.055e
   .avatar-wrap { width: min(280px, 80%); }
   .card-grid { grid-template-columns: 1fr; }
   .research-card { grid-template-columns: 1fr; gap: 14px; }
-  .research-meta { flex-direction: row; align-items: center; gap: 14px; }
+  .research-meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+  .research-figure { flex: 0 0 100%; max-width: 260px; margin-top: 4px; }
 }
 
 @media (max-width: 760px) {

@@ -11,6 +11,9 @@ index.html              页面结构 + 全部文案
 assets/css/style.css    样式（浅色 / 深色主题、响应式、打印样式）
 assets/js/main.js       主题切换、移动端导航、方向筛选、滚动动效、复制邮箱
 assets/avatar.jpg       手绘头像（替换此文件即可换头像）
+assets/research-iv.png      R1 Implicit Values 配图
+assets/research-dig.png     R2 DIG 配图
+assets/research-doal.png    R3 DOAL 配图
 assets/favicon.svg      站点图标
 .nojekyll               禁用 Jekyll，直接发布静态文件
 ```
