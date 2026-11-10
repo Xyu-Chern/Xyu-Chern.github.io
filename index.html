@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xu Chen - LLM Agents, Reinforcement Learning &amp; Robotics</title>
+<meta name="description" content="Xu Chen is an M.S. ECE student at the University of Washington working on long-horizon LLM agent systems, hybrid retrieval, RL post-training, and generative robot policies.">
+<meta name="author" content="Xu Chen">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xu Chen - LLM Agents, RL &amp; Robotics">
+<meta property="og:description" content="Selected projects and research in agentic LLM systems, hybrid RAG, reinforcement learning, and robot manipulation.">
+<meta property="og:url" content="https://xyu-chern.github.io/">
+<meta name="theme-color" content="#f7f8fa">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('xc-theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Xu Chen - back to top">
+      <span class="brand-mark" aria-hidden="true">XC</span>
+      <span class="brand-name">Xu Chen</span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> M.S. ECE &middot; University of Washington</p>
+        <h1>Xu Chen<span class="accent-dot">.</span></h1>
+        <p class="hero-lede">I build LLM agent systems and learning algorithms that hold up over long horizons.</p>
+        <p class="hero-body">My work spans agentic orchestration and context engineering, hybrid retrieval, RL post-training, and generative policies for robot manipulation &mdash; with a research focus on value estimation, exploration, and offline-to-online reinforcement learning.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">Explore my work <span aria-hidden="true">&darr;</span></a>
+          <a class="btn btn-ghost" href="mailto:nakupenda.ics@gmail.com">Get in touch</a>
+          <a class="text-link" href="https://github.com/Xyu-Chern" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="diagram-card">
+          <div class="diagram-head">
+            <span class="diagram-title">agent harness / system sketch</span>
+            <span class="diagram-dots"><i></i><i></i><i></i></span>
+          </div>
+          <svg class="flow" viewBox="0 0 380 330" role="img">
+            <defs>
+              <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="var(--accent)" stop-opacity=".95"/>
+                <stop offset="100%" stop-color="var(--accent-2)" stop-opacity=".95"/>
+              </linearGradient>
+            </defs>
+            <g class="flow-lines" fill="none" stroke="var(--line-strong)" stroke-width="1.5">
+              <path d="M190 74 V104"/>
+              <path d="M190 130 V158 H88 V182"/>
+              <path d="M190 130 V158 H190 V182"/>
+              <path d="M190 130 V158 H292 V182"/>
+              <path d="M88 234 V258 H190 V282"/>
+              <path d="M190 234 V258"/>
+              <path d="M292 234 V258 H190"/>
+            </g>
+            <g class="flow-node flow-node-main">
+              <rect x="105" y="30" width="170" height="44" rx="12" fill="url(#flowGrad)"/>
+              <text x="190" y="57" text-anchor="middle" class="flow-text-invert">Lead Agent</text>
+            </g>
+            <g class="flow-node">
+              <rect x="20" y="182" width="136" height="52" rx="12" fill="var(--surface)"/>
+              <text x="88" y="204" text-anchor="middle" class="flow-text">Context</text>
+              <text x="88" y="221" text-anchor="middle" class="flow-text-sub">compression</text>
+            </g>
+            <g class="flow-node">
+              <rect x="122" y="182" width="136" height="52" rx="12" fill="var(--surface)"/>
+              <text x="190" y="204" text-anchor="middle" class="flow-text">Tool</text>
+              <text x="190" y="221" text-anchor="middle" class="flow-text-sub">registry</text>
+            </g>
+            <g class="flow-node">
+              <rect x="224" y="182" width="136" height="52" rx="12" fill="var(--surface)"/>
+              <text x="292" y="204" text-anchor="middle" class="flow-text">Sub-</text>
+              <text x="292" y="221" text-anchor="middle" class="flow-text-sub">agents</text>
+            </g>
+            <g class="flow-node">
+              <rect x="105" y="282" width="170" height="40" rx="12" fill="var(--accent-soft)" stroke="var(--accent-line)"/>
+              <text x="190" y="307" text-anchor="middle" class="flow-text">MCP tools &amp; memory</text>
+            </g>
+          </svg>
+          <div class="diagram-foot">
+            <span>context engineering</span><span>multi-agent routing</span><span>long-horizon state</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">01 / About</p>
+        <h2>Systems that stay reliable when the horizon gets long.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>On the systems side, I have built an end-to-end <strong>agent harness</strong> with hierarchical lead/sub-agent dispatch, selective context compression, and a hot-swappable tool registry, plus a production-grade <strong>hybrid RAG</strong> engine combining dense and sparse retrieval, reranking, and graph-based multi-hop reasoning. Earlier work covered trajectory synthesis and RL post-training infrastructure for LLM alignment.</p>
+          <p>On the learning side, my research has looked at how rare successful signals get diluted in value networks, how analytical information gain can drive reward-free exploration, and how Q-values can improve diffusion and flow policies without backpropagating through the action-generation process. I have also shipped low-latency perception and motion-planning systems in C++17 / ROS 2 for edge robotic platforms.</p>
+        </div>
+        <aside class="about-aside reveal" aria-label="Current focus">
+          <h3>Current focus</h3>
+          <ul>
+            <li><span class="bullet" aria-hidden="true"></span> Long-horizon agent orchestration &amp; context engineering</li>
+            <li><span class="bullet" aria-hidden="true"></span> Retrieval, reranking &amp; self-corrective generation</li>
+            <li><span class="bullet" aria-hidden="true"></span> Value estimation, exploration &amp; generative policies</li>
+          </ul>
+          <p class="aside-note">M.S. in Electrical and Computer Engineering, University of Washington (from Sep 2026).</p>
+        </aside>
+      </div>
+
+      <div class="stats reveal" aria-label="Selected results">
+        <div class="stat"><strong>250k+</strong><span>synthetic samples generated at 35% lower token cost</span></div>
+        <div class="stat"><strong>93.5%</strong><span>retrieval recall on dense technical documentation</span></div>
+        <div class="stat"><strong>91%</strong><span>task completion on complex multi-step workflows</span></div>
+        <div class="stat"><strong>94%</strong><span>success rate across Isaac Sim / Robomimic manipulation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">02 / Experience</p>
+        <h2>Internship</h2>
+      </div>
+
+      <article class="experience-card reveal">
+        <div class="exp-head">
+          <div>
+            <h3>Algorithm &amp; Systems Engineering Intern</h3>
+            <p class="exp-org">Shanghai Zhangjiang Institute of Mathematics &middot; Shanghai, China</p>
+          </div>
+          <span class="exp-date">Sep &ndash; Nov 2024</span>
+        </div>
+        <p class="exp-intro">Two workstreams spanning LLM post-training infrastructure and edge robotic perception.</p>
+
+        <div class="exp-streams">
+          <div class="exp-stream">
+            <span class="stream-label">LLM post-training</span>
+            <p>Built a scalable data-synthesis and alignment pipeline: multi-scaffold trajectory sampling (ReAct, Code-Act, Plan-and-Solve), LLM-as-a-Judge rubric filtering for DPO/PPO preference pairs, and vLLM / DeepSpeed distributed RL rollouts with KV-cache reuse.</p>
+            <ul class="metric-chips">
+              <li><strong>250k+</strong> samples</li>
+              <li><strong>+18.4%</strong> pass@1 after RL</li>
+              <li><strong>2.8&times;</strong> rollout throughput</li>
+            </ul>
+          </div>
+          <div class="exp-stream">
+            <span class="stream-label">Edge robotic perception</span>
+            <p>Customized YOLOv8 for lightweight multi-scale features, built a TensorRT PTQ workflow on Jetson AGX Orin with layer-wise FP16/INT8 sensitivity analysis, and reworked ROS 2 nodes in C++17 with CycloneDDS + Iceoryx shared memory for zero-copy sensor transport.</p>
+            <ul class="metric-chips">
+              <li><strong>42ms &rarr; 7.8ms</strong> perception</li>
+              <li><strong>&minus;80%</strong> IPC latency</li>
+              <li><strong>&lt;1.5%</strong> mAP loss</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- WORK: PROJECTS + RESEARCH -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head work-head reveal">
+        <div>
+          <p class="section-kicker">03 / Selected work</p>
+          <h2>Projects &amp; research</h2>
+          <p class="section-sub">Everything below comes from my r&eacute;sum&eacute; &mdash; four engineering projects and three RL research projects.</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter work by area">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All <span>7</span></button>
+          <button type="button" class="filter" data-filter="ai" aria-pressed="false">LLM &amp; Agents <span>2</span></button>
+          <button type="button" class="filter" data-filter="robotics" aria-pressed="false">Robotics <span>2</span></button>
+          <button type="button" class="filter" data-filter="research" aria-pressed="false">RL Research <span>3</span></button>
+        </div>
+      </div>
+
+      <div class="work-group" id="projects">
+        <div class="group-head reveal"><h3>Engineering projects</h3><span>04</span></div>
+        <div class="card-grid">
+
+          <article class="work-card reveal" data-track="ai">
+            <div class="card-top"><span class="card-index">01</span><span class="card-period">Apr &ndash; Aug 2026</span></div>
+            <h3>Agentic Workflow Engine &amp; Long-Horizon LLM Agent Harness</h3>
+            <p class="card-role">Designed an end-to-end multi-agent orchestration framework with dynamic skill loading, sub-agent spawning, and stateful memory management &mdash; targeting context bloat, cascading tool-call failures, and token cost.</p>
+            <ul class="card-metrics">
+              <li><strong>&minus;65%</strong><span>prompt size</span></li>
+              <li><strong>25s &rarr; 8.4s</strong><span>sub-agent latency</span></li>
+              <li><strong>62% &rarr; 91%</strong><span>task completion</span></li>
+            </ul>
+            <ul class="card-points">
+              <li>Hierarchical Lead-Agent to Sub-Agent dispatch with multi-turn MCP tool invocation, asynchronous parallel planning, and fallback retry logic.</li>
+              <li>Selective context compression using hybrid semantic filtering and attention-based keyframe summarization (micro-compact).</li>
+              <li>Modular tool schema registry with dynamic prompt injection and strict JSON Schema output validation.</li>
+            </ul>
+            <div class="tags"><span>Multi-Agent</span><span>MCP</span><span>Context Engineering</span><span>Python</span></div>
+          </article>
+
+          <article class="work-card reveal" data-track="ai">
+            <div class="card-top"><span class="card-index">02</span><span class="card-period">Sep 2025 &ndash; Mar 2026</span></div>
+            <h3>Enterprise Hybrid RAG System &amp; AI Search Engine</h3>
+            <p class="card-role">Engineered a production-grade retrieval framework with multi-stage retrieval, semantic reranking, and dynamic prompt augmentation for enterprise knowledge search.</p>
+            <ul class="card-metrics">
+              <li><strong>93.5%</strong><span>retrieval recall</span></li>
+              <li><strong>3.2s &rarr; 850ms</strong><span>query latency</span></li>
+              <li><strong>&minus;40%</strong><span>hallucination</span></li>
+            </ul>
+            <ul class="card-points">
+              <li>Dual-path dense (Qdrant / Milvus) + sparse (BM25) retrieval with BGE-Reranker top-k scoring.</li>
+              <li>Multi-modal parser for tables, PDFs and code blocks; parent-child chunking and GraphRAG extraction for multi-hop reasoning.</li>
+              <li>Self-reflective generation loop with retrieval evaluation and confidence-triggered web-search fallback.</li>
+            </ul>
+            <div class="tags"><span>Hybrid RAG</span><span>BM25</span><span>BGE-Reranker</span><span>GraphRAG</span><span>Qdrant / Milvus</span></div>
+          </article>
+
+          <article class="work-card reveal" data-track="robotics">
+            <div class="card-top"><span class="card-index">03</span><span class="card-period">Apr &ndash; Aug 2026</span></div>
+            <h3>Embodied Diffusion Policy &amp; Flow-Matching for Robot Manipulation</h3>
+            <p class="card-role">Led the design of a continuous-time generative policy (DOAL) for pick-and-place and insertion, backed by a high-concurrency JAX / Flax RL pipeline.</p>
+            <ul class="card-metrics">
+              <li><strong>&lt;12ms</strong><span>action-chunk inference</span></li>
+              <li><strong>94%</strong><span>task success rate</span></li>
+              <li><strong>PPO / SAC</strong><span>baselines outperformed</span></li>
+            </ul>
+            <ul class="card-points">
+              <li>Flow Matching / Diffusion Policy formulation that avoids BPTT and captures multi-modal long-horizon skills.</li>
+              <li>Fully vectorized offline-to-online RL pipeline with parallelized replay buffers and Batch-Normalizing Optimizers.</li>
+              <li>Sim-to-real evaluation and hyperparameter tuning on Isaac Sim and Robomimic.</li>
+            </ul>
+            <div class="tags"><span>Flow Matching</span><span>Diffusion Policy</span><span>JAX / Flax</span><span>Isaac Sim</span><span>Robomimic</span></div>
+          </article>
+
+          <article class="work-card reveal" data-track="robotics">
+            <div class="card-top"><span class="card-index">04</span><span class="card-period">Sep 2025 &ndash; Mar 2026</span></div>
+            <h3>Autonomous Mobile Manipulator Navigation &amp; Motion Planning Framework</h3>
+            <p class="card-role">Lead system architect for an end-to-end simulation and real-time control stack for composite robots (AMR base + 6-DOF arm) in C++17 / ROS 2.</p>
+            <ul class="card-metrics">
+              <li><strong>81% &rarr; 98%</strong><span>planning success</span></li>
+              <li><strong>200 Hz</strong><span>zero frame drops</span></li>
+              <li><strong>50+</strong><span>CI scenarios</span></li>
+            </ul>
+            <ul class="card-points">
+              <li>URDF / XACRO kinematics and dynamic constraints for joint mobile-manipulator motion.</li>
+              <li>Custom RRT* and CHOMP kinodynamic planners with OMPL / FCL, plus multi-step Q-value estimators for trajectory smoothing.</li>
+              <li>Multi-threaded control interface with async I/O and mutex-free ring buffers for velocity / torque streaming.</li>
+            </ul>
+            <div class="tags"><span>C++17</span><span>ROS 2</span><span>OMPL / FCL</span><span>URDF</span><span>Real-time control</span></div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="work-group" id="research">
+        <div class="group-head reveal"><h3>Research</h3><span>03</span></div>
+        <p class="group-note reveal">Advisor: Chunchuan Lyu &middot; reinforcement learning</p>
+        <div class="research-list">
+
+          <article class="research-card reveal" data-track="research">
+            <div class="research-meta"><span class="card-index">R1</span><span class="card-period">Oct 2025 &ndash; May 2026</span></div>
+            <div class="research-body">
+              <h3>Optimistic Multi-Step Value Estimation via Implicit Values</h3>
+              <p class="research-context">Rare successful trajectories get diluted by a shared value network fitting mostly low-value targets &mdash; the credit assignment problem in sparse-reward RL.</p>
+              <ul class="card-points">
+                <li>Reinterpreted IQL to prioritize rare high-reward signals without catastrophic overestimation.</li>
+                <li>Developed IQ(&lambda;) multi-step Q estimator and IV(&lambda;), a lightweight plug-in replacement for GAE.</li>
+                <li>Coded the offline environment, ran experiments, and proposed the long-horizon idea from highway learning.</li>
+              </ul>
+              <p class="research-result"><strong>Result:</strong> IV beats PPO in 7 / 10 sparse-reward and 7 / 8 dense-reward tasks; Empty-16&times;16 &asymp;0.9 vs 0.5, DoorKey-8&times;8 &gt;0.5 vs &asymp;0.</p>
+              <div class="tags"><span>IQL</span><span>GAE</span><span>Credit assignment</span><span>PPO</span></div>
+            </div>
+          </article>
+
+          <article class="research-card reveal" data-track="research">
+            <div class="research-meta"><span class="card-index">R2</span><span class="card-period">Jun 2025 &ndash; Feb 2026</span></div>
+            <div class="research-body">
+              <h3>Unsupervised Exploration with Expected Deep Information Gain</h3>
+              <p class="research-context">Neural dynamics models lack a tractable Bayesian posterior, so information-gain exploration usually relies on expensive or biased approximations.</p>
+              <ul class="card-points">
+                <li>Parameterized a conjugate prior and next-state likelihood with neural networks for efficient information gain.</li>
+                <li>Computed information gain via analytical KL divergence and provided a convergence analysis under stated assumptions.</li>
+                <li>Proposed the initial idea, ran sub-environments, and contributed the convergence analysis.</li>
+              </ul>
+              <p class="research-result"><strong>Result:</strong> DIG-collected data gave the best IQL results in 10 / 14 Gymnax tasks; in 7 tasks unsupervised DIG matched SAC trained with task rewards.</p>
+              <div class="tags"><span>Information gain</span><span>Bayesian inference</span><span>Gymnax</span><span>IQL / SAC</span></div>
+            </div>
+          </article>
+
+          <article class="research-card reveal" data-track="research">
+            <div class="research-meta"><span class="card-index">R3</span><span class="card-period">Jun 2024 &ndash; Sep 2025</span></div>
+            <div class="research-body">
+              <h3>Offline-to-Online RL Strategy Optimization via Diffusion Modeling (DOAL)</h3>
+              <p class="research-context">Backpropagating Q-value gradients through diffusion / flow action generation is expensive and unstable in offline RL.</p>
+              <ul class="card-points">
+                <li>Proposed DOAL (Direct Optimal Action Learning) so varied policy classes can use Q-values for action improvement.</li>
+                <li>Applied DOAL to Gaussian, diffusion and flow policies with Max Q Action Sampling; established BC / IQL baselines.</li>
+                <li>Reinterpreted the Q-loss / behavior-loss balance as a trust region, yielding a Batch-Normalizing Optimizer.</li>
+              </ul>
+              <p class="research-result"><strong>Result:</strong> Consistent gains over strong baselines across 15 OGBench and D4RL Adroit tasks with less task-specific hyperparameter tuning.</p>
+              <div class="tags"><span>Offline RL</span><span>Diffusion / Flow</span><span>D4RL</span><span>OGBench</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <p class="empty-state" id="empty-state" hidden>Nothing to show for this filter.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">04 / Skills</p>
+        <h2>Toolkit</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3><span class="skill-icon" aria-hidden="true">01</span> Languages</h3>
+          <ul class="skill-list"><li>C / C++</li><li>Python</li><li>Java</li><li>SQL</li><li>Bash</li><li>Julia</li></ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3><span class="skill-icon" aria-hidden="true">02</span> ML &amp; post-training</h3>
+          <ul class="skill-list"><li>PyTorch</li><li>JAX / Flax</li><li>NumPy / Pandas</li><li>SFT</li><li>DPO / PPO / RLHF</li><li>Trajectory synthesis</li><li>LLM-as-a-Judge</li><li>Synthetic data &amp; curation</li><li>Flow Matching</li></ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3><span class="skill-icon" aria-hidden="true">03</span> Agent &amp; LLM systems</h3>
+          <ul class="skill-list"><li>Agentic workflows</li><li>MCP Protocol</li><li>Context engineering</li><li>RAG / GraphRAG</li><li>vLLM</li><li>DeepSpeed</li><li>LangChain</li><li>LlamaIndex</li><li>Ollama</li></ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3><span class="skill-icon" aria-hidden="true">04</span> Infra &amp; robotics</h3>
+          <ul class="skill-list"><li>Docker</li><li>Redis</li><li>Qdrant / Milvus</li><li>TensorRT</li><li>CUDA (basic)</li><li>ROS 2</li><li>MoveIt 2</li><li>Isaac Sim</li><li>MuJoCo</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION + CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">05 / Background &amp; contact</p>
+        <h2>Let's connect</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="education reveal">
+          <h3>Education</h3>
+          <div class="edu-item">
+            <span class="edu-date">Sep 2026 &ndash; present</span>
+            <h4>M.S. Electrical and Computer Engineering</h4>
+            <p>University of Washington &middot; United States</p>
+          </div>
+          <div class="edu-item">
+            <span class="edu-date">Sep 2022 &ndash; Jul 2026</span>
+            <h4>B.Sc. Computer Science <span class="gpa">GPA 3.9 / 4.0</span></h4>
+            <p>Xi'an Jiaotong-Liverpool University, China &amp; University of Liverpool, UK</p>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Get in touch</h3>
+          <p>Interested in agent systems, RL research, or robotics? I'm happy to talk about the work above.</p>
+          <a class="contact-email" href="mailto:nakupenda.ics@gmail.com">nakupenda.ics@gmail.com</a>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:nakupenda.ics@gmail.com">Email me <span aria-hidden="true">&#8599;</span></a>
+            <a class="btn btn-ghost" href="https://github.com/Xyu-Chern" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">&#8599;</span></a>
+          </div>
+          <button class="copy-btn" id="copy-email" type="button" data-email="nakupenda.ics@gmail.com">Copy email address</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year">2026</span> Xu Chen</p>
+    <p>Built with plain HTML, CSS &amp; JavaScript on GitHub Pages.</p>
+    <a href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
