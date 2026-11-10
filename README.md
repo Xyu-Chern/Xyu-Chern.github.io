@@ -10,11 +10,14 @@
 index.html              页面结构 + 全部文案
 assets/css/style.css    样式（浅色 / 深色主题、响应式、打印样式）
 assets/js/main.js       主题切换、移动端导航、方向筛选、滚动动效、复制邮箱
+assets/avatar.jpg       手绘头像（替换此文件即可换头像）
 assets/favicon.svg      站点图标
 .nojekyll               禁用 Jekyll，直接发布静态文件
 ```
 
 无构建步骤、无外部依赖、无 CDN。改文案直接编辑 `index.html` 即可。
+
+研究卡片 R1（Implicit Values）与 R3（DOAL）的标题和 `View on OpenReview` 按钮都链接到对应 OpenReview 页面；R2 暂无公开链接。
 
 ## 本地预览
 
