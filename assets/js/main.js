@@ -61,8 +61,11 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ---------- Active nav link ---------- */
-  var navLinks = $$('.nav-links a');
-  var targets = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  var navLinks = $$('.nav-links a').filter(function (a) {
+    var href = a.getAttribute('href');
+    return href && href.charAt(0) === '#' && href.length > 1;
+  });
+  var targets = navLinks.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
 
   if ('IntersectionObserver' in window && targets.length) {
     var navObserver = new IntersectionObserver(function (entries) {
